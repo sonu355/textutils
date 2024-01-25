@@ -22,8 +22,12 @@ const TextForm = (props) => {
         navigator.clipboard.writeText(text.value)
     }
     const handleClearText = () => {
-        var text = document.getElementById('myBox').value
-        text.remove()
+       let newText = '';
+       setText(newText)
+    }
+    const handleExtraSpaces = () => {
+        let newText = text.split(/[ ]+/)
+        setText(newText.join(" "))
     }
     return (
         <>
@@ -36,6 +40,7 @@ const TextForm = (props) => {
                 <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
                 <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy Text</button>
                 <button className="btn btn-primary mx-2" onClick={handleClearText}>Clear Text</button>
+                <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
             </div>
             <div className="container my-3">
                 <h1>Your text summary</h1>
@@ -47,5 +52,4 @@ const TextForm = (props) => {
         </>
     );
 };
-
 export default TextForm;
