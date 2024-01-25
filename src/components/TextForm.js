@@ -7,10 +7,12 @@ const TextForm = (props) => {
         // console.log("uppercase is clicked" + text)
         let newText = text.toUpperCase()
         setText(newText)
+        props.showAlert("Converted to uppercase", "success")
     }
     const handleLoClick = () => {
         let newText = text.toLowerCase()
         setText(newText)
+        props.showAlert("Converted to lowercase", "success")
     }
     const handleOnChange = (e) => {
         // console.log("onchnage")
