@@ -47,7 +47,7 @@ const TextForm = (props) => {
                 <p>{text.split(" ").length} words and {text.length}</p>
                 <p>{0.008 * text.split(" ").length} Minutes to read</p>
                 <h2>Preview : </h2>
-                <p>{text}</p>
+                <p>{text.length>0?text:"Enter something in the above textbox to preview it here"}</p>
             </div>
         </>
     );
