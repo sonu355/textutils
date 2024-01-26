@@ -38,11 +38,11 @@ const TextForm = (props) => {
                 <div className="mb-3">
                     <textarea className="form-control" onChange={handleOnChange} style={{backgroundColor: props.mode === 'dark' ? 'gray' : 'white', color: props.mode === 'dark'? 'white' : 'gray'}} value={text} id="myBox" rows="8"></textarea>
                 </div>
-                <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
-                <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
-                <button className="btn btn-primary mx-2" onClick={handleCopy}>Copy Text</button>
-                <button className="btn btn-primary mx-2" onClick={handleClearText}>Clear Text</button>
-                <button className="btn btn-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleLoClick}>Convert to Lowercase</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy Text</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleClearText}>Clear Text</button>
+                <button disabled={text.length === 0} className="btn btn-primary mx-2 my-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
             </div>
             <div className="container my-3" style={{color: props.mode === 'dark'?'white':'black'}}>
                 <h1>Your text summary</h1>
