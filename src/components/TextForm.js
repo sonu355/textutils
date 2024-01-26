@@ -22,6 +22,7 @@ const TextForm = (props) => {
         var text = document.getElementById('myBox')
         text.select();
         navigator.clipboard.writeText(text.value)
+        document.getSelection().removeAllRanges();
     }
     const handleClearText = () => {
        let newText = '';
@@ -49,7 +50,7 @@ const TextForm = (props) => {
                 <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length}</p>
                 <p>{0.008 * text.split(" ").length} Minutes to read</p>
                 <h2>Preview : </h2>
-                <p>{text.length>0?text:"Enter something in the above textbox to preview it here"}</p>
+                <p>{text.length>0?text:"Nothing to preview!!!"}</p>
             </div>
         </>
     );
